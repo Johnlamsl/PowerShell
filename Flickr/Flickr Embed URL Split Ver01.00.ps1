@@ -24,7 +24,7 @@ if($ClipboardRaw -like '<a data-flickr-embed="true"*') #test is currently Clipbo
     $ClipboardSplit = $clipboardRaw.Split("<") | foreach { if($_ -like "*>" ){ "<"+ $_} } #Split and tidy up the data format
     ($clipboardSplit | ?{$_ -like "<img src=*"}).Split('"')[1] | Set-Clipboard #find the "img src" path and Update the Clipboard
 
-    Write-Host @("ClipboardConverted to : " + (Get-Clipboard) )  -BackgroundColor DarkGreen -ForegroundColor White
+    Write-Host @("Clipboard Converted to : " + (Get-Clipboard) )  -BackgroundColor DarkGreen -ForegroundColor White
 }
 else
 {
